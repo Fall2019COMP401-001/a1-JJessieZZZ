@@ -30,22 +30,25 @@ public class A1Jedi {
 		for (int j=0; j<people;j++) {
 			String first = scan.next();
 			String last = scan.next();
-			
+						
 			int bought = scan.nextInt();
+			String eachitem[] = new String[bought];
+
 			for (int k=0; k<bought; k++) {
 				int amount = scan.nextInt();
-				String items = scan.next();
+				eachitem[k] = scan.next();
+				
 				
 				for (int x=0; x<count;x++) {
 					item[x]=names[x];	
-					if (items.equals(names[x])) {
-						number[x]++;
+					if (eachitem[k].equals(names[x])) {
 						total[x]+=amount;
-											
+						if(!CheckRepeat(eachitem, k))
+						number[x]++;
 					}
+	            }
+            }
 	    }
-}
-		}
 		for (int b = 0; b < count; b++) {
 			if (number[b] == 0)
 				System.out.println("No customers bought " + item[b]);
@@ -55,5 +58,16 @@ public class A1Jedi {
 		}
 		
 		scan.close();
+	}
+	
+        static boolean CheckRepeat(String[] a, int pos) {
+		
+		boolean check = false;
+		
+		for (int i = 0; i < pos; i++) {
+			if(a[i].equals(a[pos])) check = true;
+		}
+		
+		return check;
 	}
 }

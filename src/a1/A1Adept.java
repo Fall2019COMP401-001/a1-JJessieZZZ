@@ -42,7 +42,7 @@ public class A1Adept {
 				for (int x=0; x<count;x++) {
 					if (items.contains(names[x])) {
 						totalbought += amount*prices[x];
-						break;
+						;
 					}
 				}
 				//record the total price each person pays
@@ -55,9 +55,9 @@ public class A1Adept {
 		double ave = findAverage(pricetotal);
 				
 		System.out.println("Biggest: " + fullname[maxPos] +
-						" (" + String.format("%.2f", fullname[maxPos]) + ")");
+						" (" + String.format("%.2f", pricetotal[maxPos]) + ")");
 		System.out.println("Smallest: " + fullname[minPos] +
-						" (" + String.format("%.2f", fullname[minPos]) + ")");
+						" (" + String.format("%.2f", pricetotal[minPos]) + ")");
 		System.out.println("Average: " + String.format("%.2f", ave));
 				
 		scan.close();
